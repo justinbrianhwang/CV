@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sunjun Hwang - Undergraduate Researcher at Yonsei University specializing in Quantum Computing, AI Security, and Robust ML.">
     <title>Sunjun Hwang - CV</title>
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link rel="stylesheet" href="styles.css">
@@ -16,7 +17,7 @@
             </div>
             <div class="header-text">
                 <h1>Sunjun Hwang</h1>
-                <h3>황선준 黃善俊</h3>
+                <h3 lang="ko">황선준 <span lang="zh">黃善俊</span></h3>
                 <div class="subtitle">
                     Undergraduate Researcher @ Yonsei University | Quantum Computing · AI Security · Robust ML
                 </div>
@@ -29,9 +30,22 @@
                     <a href="https://www.sjhwangresearch.com/">Current Research</a>
                     <a href="https://github.com/justinbrianhwang">GitHub</a>
                     <a href="https://www.linkedin.com/in/sunjunhwang/">LinkedIn</a>
-                    <a href="https://scholar.google.com/citations?hl=ko&user=6X2EVE0AAAAJ&view_op=list_works&citft=1&citft=2&citft=3&email_for_op=sunjun7559%40gmail.com&gmla=AH8HC4zU7Kc83W_CQYHE5AWwD2xRxzZ7tRTs1vIDVoIuujBfjiwvnlgBKaP_LgqoRn53mxnyHwPb4VvrRrSpiO8bnGob2DSYOyT0mMiIVz6UBYWwhV8Y5M2PmU-UQi216qq_towNUM_vwanltNrFNfKqcKDS0JisFv7Vx49E9LvsvWFFQviRUTPbvZ6LeYgxqSdU7x38i3wdb1cutbI231CyVl79h3i0ENxO2kOL1MGyxoclx8U0M1bRCA9oYxIsqDT4I-ioQGmjfvI">Google Scholar</a>
+                    <a href="https://scholar.google.com/citations?user=6X2EVE0AAAAJ">Google Scholar</a>
                 </div>
             </div>
+        </div>
+        <div class="header-buttons">
+            <button class="header-btn" onclick="printCV()" aria-label="Download as PDF" title="Save as PDF">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                    <polyline points="14 2 14 8 20 8"></polyline>
+                    <line x1="12" y1="18" x2="12" y2="12"></line>
+                    <polyline points="9 15 12 18 15 15"></polyline>
+                </svg>
+            </button>
+            <button class="header-btn" onclick="toggleDarkMode()" aria-label="Toggle dark mode">
+                <span class="toggle-icon"></span>
+            </button>
         </div>
     </header>
 
@@ -45,7 +59,7 @@
     </section>
 
     <section class="section">
-        <h2>Research Interests</h2>
+        <h2>Research Interests <a href="https://www.sjhwangresearch.com/html/areas.html" class="section-link" target="_blank">View Details</a></h2>
         <div class="research-interests">
             <div class="interest-item">
                 <strong>Quantum Computing</strong>
@@ -96,7 +110,7 @@
     </section>
 
     <section class="section">
-    <h2>Publications</h2>
+    <h2>Publications <a href="https://www.sjhwangresearch.com/html/publications.html" class="section-link" target="_blank">View All</a></h2>
 
     <!-- 2026 -->
     <div class="publication-item">
@@ -149,7 +163,7 @@
             Quantum Noise-based Adversarial Attack on Diffusion Models and Analysis of Defense Mechanisms
         </div>
         <div class="authors"><strong>Sunjun Hwang</strong>.</div>
-        <div class="venue">KIIT-JICS 2026 (Accepted, Nov 08, 2025)</div>
+        <div class="venue">KIIT-JICS 2026 (Accepted, Nov 2025)</div>
         <div class="description">
             This study explores a novel adversarial attack framework on diffusion models using quantum noise characteristics and evaluates defense mechanisms against such quantum-inspired perturbations.
         </div>
@@ -193,7 +207,7 @@
             Performance Comparison of 8 Deep Learning Models for Seismic Signal Denoising
         </div>
         <div class="authors"><strong>Sunjun Hwang</strong>, Sehee Park, Kangmin Ko, Jiyun Baik</div>
-        <div class="venue">Proceedings of KIIT Conference, 2025 (Sep 05, 2025)</div>
+        <div class="venue">Proceedings of KIIT Conference, 2025 (Published, Sep 2025)</div>
         <div class="description">
             The paper conducts a systematic comparison of eight deep learning models—BiLSTM, Denoising Autoencoder, FFTformer, Informer, PatchTST, TCN, UNet1D, and WaveNet—for seismic signal denoising under identical experimental conditions.
         </div>
@@ -204,7 +218,7 @@
             A Study on Robustness Enhancement and Multi-Adversarial Attacks in Vision Transformer-based Image Classification Models
         </div>
         <div class="authors"><strong>Sunjun Hwang</strong>, Hongjoon Jun, Sunje Kuem</div>
-        <div class="venue">Proceedings of KIIT Conference, 2025 (May 16, 2025)</div>
+        <div class="venue">Proceedings of KIIT Conference, 2025 (Published, May 2025)</div>
         <div class="description">
             This paper analyzes adversarial robustness in ViT-B32 models under FGSM, PGD, and CW attacks, demonstrating that multi-adversarial training significantly improves robustness while maintaining high clean accuracy.
         </div>
@@ -214,58 +228,200 @@
 
 
     <section class="section">
-        <h2>Projects</h2>
+        <h2>Current Research <a href="https://www.sjhwangresearch.com/html/projects.html" class="section-link" target="_blank">View All</a></h2>
+
         <div class="project-item">
-            <h3>OCR Project</h3>
-            <div class="date">April 2025 - November 2025</div>
+            <h3>Autonomous Driving + Federated Learning (Heterogeneous Models) <span class="status-badge active">Active</span></h3>
+            <div class="date">2025 - Present</div>
             <div class="description">
-                Project description: This project strengthened my ability to apply classical computer vision and OCR techniques to real-world data, and taught me the importance of designing systems that are resilient to noise and variability in user-generated documents.
+                Training heterogeneous models via federated learning in the same driving environment. Analyzing knowledge transfer between models and performance convergence.
+            </div>
+            <div class="progress-bar"><div class="progress-fill" style="width: 85%"></div></div>
+            <div class="project-tech">
+                <span class="tech-badge">Federated Learning</span>
+                <span class="tech-badge">Heterogeneous Models</span>
+                <span class="tech-badge">Autonomous Driving</span>
+            </div>
+        </div>
+
+        <div class="project-item">
+            <h3>Fault Injection Research <span class="status-badge active">Active</span></h3>
+            <div class="date">2025 - Present</div>
+            <div class="description">
+                Research on software fault injection in deep neural networks and functional recovery via logit-based external calibration techniques.
+            </div>
+            <div class="progress-bar"><div class="progress-fill" style="width: 30%"></div></div>
+            <div class="project-tech">
+                <span class="tech-badge">Fault Injection</span>
+                <span class="tech-badge">DNN Recovery</span>
+                <span class="tech-badge">Logit Calibration</span>
+            </div>
+        </div>
+
+        <div class="project-item">
+            <h3>Quantum AI <span class="status-badge active">Active</span></h3>
+            <div class="date">2025 - Present</div>
+            <div class="description">
+                Quantum-classical hybrid neural networks, quantum noise-based adversarial attacks, and classification models utilizing Variational Quantum Circuits (VQC).
+            </div>
+            <div class="progress-bar"><div class="progress-fill" style="width: 20%"></div></div>
+            <div class="project-tech">
+                <span class="tech-badge">Quantum ML</span>
+                <span class="tech-badge">VQC</span>
+                <span class="tech-badge">PennyLane</span>
+            </div>
+        </div>
+
+        <div class="project-item">
+            <h3>Autonomous Driving + LLM <span class="status-badge active">Active</span></h3>
+            <div class="date">2025 - Present</div>
+            <div class="description">
+                Leveraging Large Language Models for autonomous driving decision-making and scenario understanding. Analyzing reasoning capabilities in complex traffic situations.
+            </div>
+            <div class="progress-bar"><div class="progress-fill" style="width: 25%"></div></div>
+            <div class="project-tech">
+                <span class="tech-badge">LLM</span>
+                <span class="tech-badge">Autonomous Driving</span>
+                <span class="tech-badge">Decision Making</span>
+            </div>
+        </div>
+
+        <div class="project-item">
+            <h3>Autonomous Driving + FL (Domain Shift) <span class="status-badge active">Active</span></h3>
+            <div class="date">2025 - Present</div>
+            <div class="description">
+                Training the same model via federated learning across diverse driving environments (urban, highway, night, etc.). Analyzing robustness against domain shift.
+            </div>
+            <div class="progress-bar"><div class="progress-fill" style="width: 10%"></div></div>
+            <div class="project-tech">
+                <span class="tech-badge">Federated Learning</span>
+                <span class="tech-badge">Domain Shift</span>
+                <span class="tech-badge">Autonomous Driving</span>
+            </div>
+        </div>
+
+        <div class="project-item">
+            <h3>TDA for Medical Data Analysis <span class="status-badge active">Active</span></h3>
+            <div class="date">2025 - Present</div>
+            <div class="description">
+                Applying Topological Data Analysis (TDA) to medical datasets for robust feature extraction and pattern discovery in complex healthcare data.
+            </div>
+            <div class="progress-bar"><div class="progress-fill" style="width: 5%"></div></div>
+            <div class="project-tech">
+                <span class="tech-badge">TDA</span>
+                <span class="tech-badge">Medical Data</span>
+                <span class="tech-badge">Healthcare</span>
+            </div>
+        </div>
+
+        <div class="project-item">
+            <h3>Quantum Tunneling Mathematical Modeling & Simulation <span class="status-badge active">Active</span></h3>
+            <div class="date">2025 - Present</div>
+            <div class="description">
+                Mathematical modeling and simulation of quantum tunneling phenomena. Implementing numerical solutions and visualizations using C++ for quantum mechanical barrier penetration problems.
+            </div>
+            <div class="progress-bar"><div class="progress-fill" style="width: 2%"></div></div>
+            <div class="project-tech">
+                <span class="tech-badge">C++</span>
+                <span class="tech-badge">Modeling</span>
+                <span class="tech-badge">Quantum Tunneling</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>Completed Projects</h2>
+
+        <div class="project-item">
+            <h3>AI-Based Aquaponics Monitoring & Growth Prediction <span class="status-badge completed">Completed</span></h3>
+            <div class="date">2025 (with COREX)</div>
+            <div class="description">
+                Camera-based plant growth prediction and real-time AI monitoring of pH, temperature, and other environmental factors in aquaponics systems, with automated adjustment upon anomaly detection.
+            </div>
+            <div class="project-tech">
+                <span class="tech-badge">Computer Vision</span>
+                <span class="tech-badge">IoT</span>
+                <span class="tech-badge">Real-time Monitoring</span>
+            </div>
+        </div>
+
+        <div class="project-item">
+            <h3>Mathematical Analysis of Quantum GNN <span class="status-badge completed">Completed</span></h3>
+            <div class="date">2025</div>
+            <div class="description">
+                Theoretical and mathematical analysis of Quantum Graph Neural Networks, investigating expressiveness, convergence properties, and computational advantages.
+            </div>
+            <div class="project-tech">
+                <span class="tech-badge">Quantum</span>
+                <span class="tech-badge">GNN</span>
+                <span class="tech-badge">Mathematical Analysis</span>
+            </div>
+        </div>
+
+        <div class="project-item">
+            <h3>Side Channel Attack Detection <span class="status-badge completed">Completed</span></h3>
+            <div class="date">Mar 2025 - Jun 2025</div>
+            <div class="description">
+                Comparative analysis of AI models to identify the most effective architecture for detecting side-channel attacks in hardware systems. The MLP model’s efficiency and robustness underlined the importance of model-data alignment over architectural complexity.
+            </div>
+            <div class="project-tech">
+                <span class="tech-badge">PyTorch</span>
+                <span class="tech-badge">Scikit-learn</span>
+                <span class="tech-badge">PCA</span>
+                <span class="tech-badge">Security</span>
+            </div>
+        </div>
+
+        <div class="project-item">
+            <h3>OCR + LLM-Based Medical Document Automation <span class="status-badge completed">Completed</span></h3>
+            <div class="date">Apr 2025 - Nov 2025</div>
+            <div class="description">
+                Automated processing and structuring of medical documents by combining OCR text extraction with LLM-based understanding and summarization.
             </div>
             <div class="project-tech">
                 <span class="tech-badge">Naver OCR</span>
                 <span class="tech-badge">OpenAI API</span>
+                <span class="tech-badge">NLP</span>
                 <span class="tech-badge">Ubuntu</span>
             </div>
         </div>
 
         <div class="project-item">
-            <h3>Development of a Hazard Detection System Using Emergency Voice and Scream Detection</h3>
+            <h3>Voice Data-Based Risk Situation Prediction <span class="status-badge completed">Completed</span></h3>
             <div class="date">Sep 2024 - Dec 2024</div>
             <div class="description">
-                Project description: This project demonstrated the power of combining time-frequency analysis with modern neural architectures for real-world safety applications. It strengthened my practical understanding of signal processing, deep learning optimization, and team coordination in technical research environments.
+                Detecting and predicting risk situations from voice data using audio feature extraction and deep learning classification. Follow-up research led to FPGA-based implementation (KCS 2026).
             </div>
             <div class="project-tech">
                 <span class="tech-badge">PyTorch</span>
-                <span class="tech-badge">Torchvision</span>
-                <span class="tech-badge">Scipy</span>
                 <span class="tech-badge">Librosa</span>
                 <span class="tech-badge">Google Speech-to-Text API</span>
             </div>
         </div>
 
         <div class="project-item">
-            <h3>User-Recommended Search Term Program </h3>
-            <div class="date">April 2024 - June 2024</div>
+            <h3>LLM-Based Search Query Optimization <span class="status-badge completed">Completed</span></h3>
+            <div class="date">Apr 2024 - Jun 2024</div>
             <div class="description">
-                Project description: At the time, I had no exposure to machine learning or deep learning, but I learned how far simple algorithms and thoughtful design can go. This experience taught me to build solutions with the tools I had, and to always design with the user in mind.
+                Optimizing search queries using LLMs to improve search accuracy and user experience through intent understanding and query reformulation.
             </div>
             <div class="project-tech">
-                <span class="tech-badge">PyTorch</span>
+                <span class="tech-badge">LLM</span>
+                <span class="tech-badge">NLP</span>
                 <span class="tech-badge">Python</span>
             </div>
         </div>
 
         <div class="project-item">
-            <h3>Side Channel Attack</h3>
-            <div class="date">March 2025 - June 2025</div>
+            <h3>Electricity Usage Prediction <span class="status-badge completed">Completed</span></h3>
+            <div class="date">2024</div>
             <div class="description">
-                Project description: This project demonstrated the practical viability of deep learning in detecting side-channel anomalies, even under simulated conditions. Leading a research-focused, multi-member effort strengthened my ability to manage complex technical collaborations and clearly communicate experimental outcomes. The MLP model’s efficiency and robustness underlined the importance of model–data alignment over architectural complexity. Moving forward, we plan to integrate real-world trace data, apply advanced preprocessing techniques, and experiment with adversarial robustness to build deployable side-channel defense systems.
+                Predicting electricity consumption by integrating weather data and historical usage patterns using machine learning models.
             </div>
             <div class="project-tech">
-                <span class="tech-badge">PyTorch</span>
-                <span class="tech-badge">Python</span>
-                <span class="tech-badge">Scikit-learn</span>
-                <span class="tech-badge">PCA</span>
+                <span class="tech-badge">Time Series</span>
+                <span class="tech-badge">Prediction</span>
+                <span class="tech-badge">Weather Data</span>
             </div>
         </div>
     </section>
@@ -283,29 +439,27 @@
     <section class="section">
         <h2>Awards & Honors</h2>
         <div class="award-item">
-            <div class="date">2023-2</div>
-            <h3>Academic Excellence Award</h3>
-            <div class="institution">Yonsei University</div>
+            <div class="date">Feb 2026</div>
+            <h3>LG Aimers 8th Cohort — EXAONE Model Lightweight LLM Compression</h3>
+            <div class="institution">LG AI Research Institute / Ministry of Employment and Labor</div>
+            <div class="description">
+                Completed LG Aimers 8th program (Jan–Feb 2026). Hackathon topic: EXAONE Model Lightweight LLM Compression.
+            </div>
         </div>
         <div class="award-item">
-            <div class="date">2024-1</div>
-            <h3>Academic Excellence Award</h3>
-            <div class="institution">Yonsei University</div>
+            <div class="date">Dec 2025</div>
+            <h3>Outstanding Paper Award from the Korea Information Technology Society</h3>
+            <div class="institution">KIIT</div>
+        </div>
+        <div class="award-item">
+            <div class="date">Jul 2025</div>
+            <h3>Outstanding Paper Award from the Korea Information Technology Society</h3>
+            <div class="institution">KIIT</div>
         </div>
         <div class="award-item">
             <div class="date">2024</div>
-            <h3> Software Engineer Literacy Seminar</h3>
-            <div class="institution">The Korean Institute of Convergence Signal Processing </div>
-        </div>
-        <div class="award-item">
-            <div class="date">ongoing</div>
-            <h3> Volunteering and social contributions</h3>
-            <div class="institution">The Korean Red Cross</div>
-        </div>
-        <div class="award-item">
-            <div class="date">2024</div>
-            <h3>LG Aimers Certificate of Achievement</h3>
-            <div class="institution">LG</div>
+            <h3>LG Aimers 6th Cohort — Data Intelligence (Pregnancy Success Prediction)</h3>
+            <div class="institution">LG AI Research Institute / Ministry of Employment and Labor</div>
         </div>
         <div class="award-item">
             <div class="date">2024</div>
@@ -313,14 +467,24 @@
             <div class="institution">Korean Artificial-Intelligence Convergence Technology Society</div>
         </div>
         <div class="award-item">
-            <div class="date">2025 07</div>
-            <h3>Outstanding Paper Award from the Korea Information Technology Society</h3>
-            <div class="institution">KIIT</div>
+            <div class="date">2024</div>
+            <h3>Software Engineer Literacy Seminar</h3>
+            <div class="institution">The Korean Institute of Convergence Signal Processing</div>
         </div>
         <div class="award-item">
-            <div class="date">2025 12</div>
-            <h3>Outstanding Paper Award from the Korea Information Technology Society</h3>
-            <div class="institution">KIIT</div>
+            <div class="date">Spring 2024</div>
+            <h3>Academic Excellence Award</h3>
+            <div class="institution">Yonsei University</div>
+        </div>
+        <div class="award-item">
+            <div class="date">Fall 2023</div>
+            <h3>Academic Excellence Award</h3>
+            <div class="institution">Yonsei University</div>
+        </div>
+        <div class="award-item">
+            <div class="date">Ongoing</div>
+            <h3>Volunteering and Social Contributions</h3>
+            <div class="institution">The Korean Red Cross</div>
         </div>
     </section>
 </div>

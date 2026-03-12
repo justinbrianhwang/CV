@@ -22,6 +22,7 @@ body {
    Header Styles
    ========================= */
 header {
+    position: relative;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: #ffffff;
     padding: 60px 40px;
@@ -108,6 +109,37 @@ h1 {
     text-decoration: underline;
 }
 
+/* Header Buttons (PDF + Dark Mode) */
+.header-buttons {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.header-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    transition: background 0.3s ease;
+}
+
+.header-btn:hover {
+    background: rgba(255, 255, 255, 0.35);
+}
+
+.toggle-icon {
+    font-size: 1.1em;
+}
+
 /* =========================
    Section Styles
    ========================= */
@@ -125,6 +157,33 @@ h2 {
     padding-bottom: 10px;
     border-bottom: 2px solid #f0f0f0;
     font-size: 1.8em;
+}
+
+.section-link {
+    font-size: 0.45em;
+    font-weight: 400;
+    color: #667eea;
+    text-decoration: none;
+    border: 1px solid #667eea;
+    padding: 3px 10px;
+    border-radius: 12px;
+    vertical-align: middle;
+    transition: all 0.3s ease;
+}
+
+.section-link:hover {
+    background: #667eea;
+    color: #ffffff;
+}
+
+body.dark-mode .section-link {
+    color: #9ba3f5;
+    border-color: #9ba3f5;
+}
+
+body.dark-mode .section-link:hover {
+    background: #9ba3f5;
+    color: #1a1a1a;
 }
 
 /* ❗ 전역 h3는 그대로 유지 */
@@ -259,6 +318,58 @@ h3 {
 }
 
 /* =========================
+   Status Badges & Progress
+   ========================= */
+.status-badge {
+    font-size: 0.7em;
+    font-weight: 500;
+    padding: 2px 10px;
+    border-radius: 10px;
+    vertical-align: middle;
+    margin-left: 8px;
+}
+
+.status-badge.active {
+    background: #e8f5e9;
+    color: #2e7d32;
+}
+
+.status-badge.completed {
+    background: #e3f2fd;
+    color: #1565c0;
+}
+
+body.dark-mode .status-badge.active {
+    background: #1b5e20;
+    color: #a5d6a7;
+}
+
+body.dark-mode .status-badge.completed {
+    background: #0d47a1;
+    color: #90caf9;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 6px;
+    background: #e0e0e0;
+    border-radius: 3px;
+    margin: 10px 0;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    border-radius: 3px;
+    transition: width 0.6s ease;
+}
+
+body.dark-mode .progress-bar {
+    background: #3a3a3a;
+}
+
+/* =========================
    Animation
    ========================= */
 .section {
@@ -315,23 +426,266 @@ body.dark-mode .institution {
 }
 
 /* =========================
-   Print
+   Print — formal CV document style
    ========================= */
 @media print {
-    body {
-        background: white;
-    }
-
-    .section {
-        box-shadow: none;
-        border: 1px solid #ddd;
-        page-break-inside: avoid;
-    }
-
-    header {
-        background: #667eea !important;
+    * {
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
+    }
+
+    body {
+        background: white !important;
+        color: #000 !important;
+        font-size: 10pt;
+        line-height: 1.4;
+    }
+
+    .container {
+        max-width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    /* --- Header → formal CV header --- */
+    header {
+        background: none !important;
+        color: #000 !important;
+        padding: 0 !important;
+        margin-bottom: 0 !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        border-bottom: 2px solid #000;
+        padding-bottom: 12pt !important;
+    }
+
+    .header-buttons {
+        display: none !important;
+    }
+
+    .profile-image-container {
+        display: none !important;
+    }
+
+    .header-content {
+        display: block !important;
+        text-align: center;
+    }
+
+    header h1 {
+        color: #000 !important;
+        font-size: 20pt !important;
+        margin-bottom: 2pt;
+        letter-spacing: 2pt;
+        text-transform: uppercase;
+    }
+
+    header h3 {
+        color: #444 !important;
+        font-size: 10pt !important;
+        opacity: 1 !important;
+        margin-top: 2pt;
+        margin-bottom: 6pt;
+    }
+
+    header .subtitle {
+        color: #333 !important;
+        font-size: 9pt !important;
+        opacity: 1 !important;
+        margin-bottom: 4pt !important;
+    }
+
+    .contact-info {
+        justify-content: center;
+        gap: 6pt !important;
+        font-size: 8.5pt !important;
+        margin-top: 6pt;
+    }
+
+    .contact-info a {
+        color: #333 !important;
+        text-decoration: none !important;
+        opacity: 1 !important;
+    }
+
+    .contact-info a::after {
+        content: none;
+    }
+
+    /* separator between contact links */
+    .contact-info a + a::before {
+        content: " | ";
+        color: #999;
+        margin-right: 2pt;
+    }
+
+    /* --- Sections → clean document style --- */
+    .section {
+        background: none !important;
+        box-shadow: none !important;
+        border: none !important;
+        border-radius: 0 !important;
+        margin-bottom: 2pt !important;
+        padding: 8pt 0 4pt 0 !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+
+    .section-link {
+        display: none !important;
+    }
+
+    h2 {
+        color: #000 !important;
+        font-size: 12pt !important;
+        text-transform: uppercase;
+        letter-spacing: 1pt;
+        border-bottom: 1px solid #000 !important;
+        margin-bottom: 6pt !important;
+        padding-bottom: 3pt !important;
+    }
+
+    h3 {
+        color: #000 !important;
+        font-size: 10pt !important;
+        margin-bottom: 1pt !important;
+    }
+
+    .date {
+        color: #555 !important;
+        font-size: 8.5pt !important;
+        margin-bottom: 2pt !important;
+    }
+
+    .description {
+        color: #333 !important;
+        font-size: 9pt !important;
+        line-height: 1.35 !important;
+        margin-top: 2pt !important;
+    }
+
+    .institution {
+        color: #222 !important;
+        font-size: 9.5pt !important;
+    }
+
+    /* --- Items compact --- */
+    .publication-item,
+    .project-item,
+    .education-item,
+    .award-item {
+        page-break-inside: avoid;
+        margin-bottom: 6pt !important;
+        padding-bottom: 6pt !important;
+        border-bottom: none !important;
+    }
+
+    .education-item,
+    .project-item,
+    .award-item {
+        border-bottom: 0.5px solid #ddd !important;
+    }
+
+    .education-item:last-child,
+    .project-item:last-child,
+    .award-item:last-child {
+        border-bottom: none !important;
+    }
+
+    /* --- Publications → numbered list style --- */
+    .publication-title {
+        font-size: 9.5pt !important;
+        color: #000 !important;
+    }
+
+    .authors {
+        font-size: 8.5pt !important;
+        color: #333 !important;
+    }
+
+    .venue {
+        font-size: 8.5pt !important;
+        color: #555 !important;
+    }
+
+    .publication-item .description {
+        font-size: 8.5pt !important;
+    }
+
+    /* --- Research interests → inline --- */
+    .research-interests {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        gap: 4pt !important;
+    }
+
+    .interest-item {
+        background: none !important;
+        border-left: none !important;
+        padding: 2pt 8pt !important;
+        border: 0.5px solid #aaa !important;
+        border-radius: 2pt !important;
+        font-size: 8.5pt !important;
+    }
+
+    .interest-item p {
+        display: none;
+    }
+
+    /* --- Tech badges → simple tags --- */
+    .tech-badge {
+        background: none !important;
+        color: #555 !important;
+        border: 0.5px solid #999 !important;
+        font-size: 7.5pt !important;
+        padding: 1pt 5pt !important;
+        border-radius: 2pt !important;
+    }
+
+    .project-tech {
+        margin-top: 3pt !important;
+    }
+
+    /* --- Skills → inline --- */
+    .skill-tag {
+        background: none !important;
+        color: #000 !important;
+        padding: 0 !important;
+        font-size: 9pt !important;
+    }
+
+    .skills {
+        gap: 4pt 16pt !important;
+    }
+
+    /* --- Progress bars → text percentage --- */
+    .progress-bar {
+        display: none !important;
+    }
+
+    /* --- Status badges → simple text --- */
+    .status-badge {
+        font-size: 7.5pt !important;
+        padding: 1pt 5pt !important;
+        border-radius: 2pt !important;
+    }
+
+    .status-badge.active {
+        background: none !important;
+        color: #555 !important;
+        border: 0.5px solid #888 !important;
+    }
+
+    .status-badge.completed {
+        background: none !important;
+        color: #555 !important;
+        border: 0.5px solid #888 !important;
+    }
+
+    /* --- Page settings --- */
+    @page {
+        margin: 0.6in 0.7in;
+        size: A4;
     }
 }
 

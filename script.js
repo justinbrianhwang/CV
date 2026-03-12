@@ -43,14 +43,23 @@ document.addEventListener('DOMContentLoaded', function() {
         window.print();
     };
 
-    // Dark mode toggle (optional)
+    // Dark mode toggle
+    function updateToggleIcon() {
+        const icon = document.querySelector('.toggle-icon');
+        if (icon) {
+            icon.textContent = document.body.classList.contains('dark-mode') ? '\u2600\uFE0F' : '\uD83C\uDF19';
+        }
+    }
+
     window.toggleDarkMode = function() {
         document.body.classList.toggle('dark-mode');
         localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+        updateToggleIcon();
     };
 
     // Check for saved dark mode preference
     if (localStorage.getItem('darkMode') === 'true') {
         document.body.classList.add('dark-mode');
     }
+    updateToggleIcon();
 });
