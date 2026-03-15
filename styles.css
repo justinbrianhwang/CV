@@ -339,6 +339,11 @@ h3 {
     color: #1565c0;
 }
 
+.status-badge.planning {
+    background: #fff3e0;
+    color: #e65100;
+}
+
 body.dark-mode .status-badge.active {
     background: #1b5e20;
     color: #a5d6a7;
@@ -347,6 +352,11 @@ body.dark-mode .status-badge.active {
 body.dark-mode .status-badge.completed {
     background: #0d47a1;
     color: #90caf9;
+}
+
+body.dark-mode .status-badge.planning {
+    background: #bf360c;
+    color: #ffcc80;
 }
 
 .progress-bar {
@@ -413,6 +423,14 @@ body.dark-mode .skill-tag {
 body.dark-mode .interest-item {
     background: #3a3a3a;
     border-left-color: #9ba3f5;
+}
+
+body.dark-mode .publication-title {
+    color: #e8e8e8;
+}
+
+body.dark-mode .venue {
+    color: #9ba3f5;
 }
 
 body.dark-mode .date,
