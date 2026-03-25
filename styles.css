@@ -109,6 +109,10 @@ h1 {
     text-decoration: underline;
 }
 
+.contact-info .print-email {
+    display: none;
+}
+
 /* Header Buttons (PDF + Dark Mode) */
 .header-buttons {
     position: absolute;
@@ -519,25 +523,18 @@ body.dark-mode .institution {
 
     .contact-info {
         justify-content: center;
-        gap: 0 !important;
-        font-size: 8pt !important;
+        font-size: 8.5pt !important;
         margin-top: 6pt;
     }
 
     .contact-info a {
+        display: none !important;
+    }
+
+    .contact-info .print-email {
+        display: inline !important;
         color: #333 !important;
-        text-decoration: none !important;
-        opacity: 1 !important;
-    }
-
-    .contact-info a::after {
-        content: none;
-    }
-
-    .contact-info a + a::before {
-        content: " | ";
-        color: #999;
-        margin: 0 4pt;
+        font-size: 8.5pt;
     }
 
     /* ========= Section structure ========= */
