@@ -454,9 +454,10 @@ body.dark-mode .institution {
 
     body {
         background: white !important;
-        color: #000 !important;
-        font-size: 10pt;
-        line-height: 1.4;
+        color: #1a1a1a !important;
+        font-size: 9.5pt;
+        line-height: 1.35;
+        font-family: 'Georgia', 'Times New Roman', serif;
     }
 
     .container {
@@ -465,7 +466,7 @@ body.dark-mode .institution {
         margin: 0;
     }
 
-    /* --- Header → formal CV header --- */
+    /* ========= Header — formal CV nameplate ========= */
     header {
         background: none !important;
         color: #000 !important;
@@ -473,8 +474,8 @@ body.dark-mode .institution {
         margin-bottom: 0 !important;
         border-radius: 0 !important;
         box-shadow: none !important;
-        border-bottom: 2px solid #000;
-        padding-bottom: 12pt !important;
+        border-bottom: 2.5pt solid #000;
+        padding-bottom: 10pt !important;
     }
 
     .header-buttons {
@@ -492,31 +493,34 @@ body.dark-mode .institution {
 
     header h1 {
         color: #000 !important;
-        font-size: 20pt !important;
-        margin-bottom: 2pt;
-        letter-spacing: 2pt;
+        font-size: 22pt !important;
+        margin-bottom: 1pt;
+        letter-spacing: 3pt;
         text-transform: uppercase;
+        font-family: 'Georgia', 'Times New Roman', serif;
     }
 
     header h3 {
         color: #444 !important;
-        font-size: 10pt !important;
+        font-size: 9.5pt !important;
         opacity: 1 !important;
         margin-top: 2pt;
-        margin-bottom: 6pt;
+        margin-bottom: 4pt;
+        font-weight: 400;
     }
 
     header .subtitle {
         color: #333 !important;
-        font-size: 9pt !important;
+        font-size: 8.5pt !important;
         opacity: 1 !important;
-        margin-bottom: 4pt !important;
+        margin-bottom: 2pt !important;
+        letter-spacing: 0.3pt;
     }
 
     .contact-info {
         justify-content: center;
-        gap: 6pt !important;
-        font-size: 8.5pt !important;
+        gap: 0 !important;
+        font-size: 8pt !important;
         margin-top: 6pt;
     }
 
@@ -530,21 +534,20 @@ body.dark-mode .institution {
         content: none;
     }
 
-    /* separator between contact links */
     .contact-info a + a::before {
         content: " | ";
         color: #999;
-        margin-right: 2pt;
+        margin: 0 4pt;
     }
 
-    /* --- Sections → clean document style --- */
+    /* ========= Section structure ========= */
     .section {
         background: none !important;
         box-shadow: none !important;
         border: none !important;
         border-radius: 0 !important;
-        margin-bottom: 2pt !important;
-        padding: 8pt 0 4pt 0 !important;
+        margin-bottom: 0 !important;
+        padding: 7pt 0 3pt 0 !important;
         opacity: 1 !important;
         transform: none !important;
     }
@@ -555,155 +558,238 @@ body.dark-mode .institution {
 
     h2 {
         color: #000 !important;
-        font-size: 12pt !important;
+        font-size: 11pt !important;
         text-transform: uppercase;
-        letter-spacing: 1pt;
-        border-bottom: 1px solid #000 !important;
-        margin-bottom: 6pt !important;
-        padding-bottom: 3pt !important;
+        letter-spacing: 1.5pt;
+        border-bottom: 1.5pt solid #2a2a2a !important;
+        margin-bottom: 5pt !important;
+        padding-bottom: 2pt !important;
+        font-family: 'Georgia', 'Times New Roman', serif;
     }
 
-    h3 {
-        color: #000 !important;
-        font-size: 10pt !important;
-        margin-bottom: 1pt !important;
-    }
-
-    .date {
-        color: #555 !important;
-        font-size: 8.5pt !important;
-        margin-bottom: 2pt !important;
-    }
-
-    .description {
-        color: #333 !important;
-        font-size: 9pt !important;
-        line-height: 1.35 !important;
-        margin-top: 2pt !important;
-    }
-
-    .institution {
-        color: #222 !important;
-        font-size: 9.5pt !important;
-    }
-
-    /* --- Items compact --- */
-    .publication-item,
-    .project-item,
+    /* ========= Item layout — two-column date|content ========= */
     .education-item,
     .award-item {
+        display: grid !important;
+        grid-template-columns: 120pt 1fr !important;
+        grid-template-rows: auto auto auto !important;
+        column-gap: 10pt !important;
+        row-gap: 0 !important;
         page-break-inside: avoid;
-        margin-bottom: 6pt !important;
-        padding-bottom: 6pt !important;
-        border-bottom: none !important;
-    }
-
-    .education-item,
-    .project-item,
-    .award-item {
-        border-bottom: 0.5px solid #ddd !important;
+        margin-bottom: 4pt !important;
+        padding-bottom: 4pt !important;
+        border-bottom: 0.5px solid #e0e0e0 !important;
+        align-items: baseline;
     }
 
     .education-item:last-child,
-    .project-item:last-child,
     .award-item:last-child {
         border-bottom: none !important;
     }
 
-    /* --- Publications → numbered list style --- */
-    .publication-title {
-        font-size: 9.5pt !important;
+    .education-item > .date,
+    .award-item > .date {
+        grid-column: 1 !important;
+        grid-row: 1 !important;
+        color: #444 !important;
+        font-size: 8pt !important;
+        font-style: italic;
+        margin-bottom: 0 !important;
+        padding-top: 1pt;
+    }
+
+    .education-item > h3,
+    .award-item > h3 {
+        grid-column: 2 !important;
+        grid-row: 1 !important;
         color: #000 !important;
+        font-size: 10pt !important;
+        margin-bottom: 0 !important;
     }
 
-    .authors {
-        font-size: 8.5pt !important;
+    .education-item > .institution,
+    .award-item > .institution {
+        grid-column: 2 !important;
+        grid-row: 2 !important;
         color: #333 !important;
-    }
-
-    .venue {
         font-size: 8.5pt !important;
-        color: #555 !important;
+        font-style: italic;
     }
 
-    .publication-item .description {
+    .education-item > .description,
+    .award-item > .description {
+        grid-column: 2 !important;
+        grid-row: 3 !important;
+        color: #333 !important;
+        font-size: 8pt !important;
+        line-height: 1.3 !important;
+        margin-top: 2pt !important;
+    }
+
+    /* ========= About Me — compact ========= */
+    .section > p.description {
         font-size: 8.5pt !important;
+        line-height: 1.4 !important;
+        color: #222 !important;
     }
 
-    /* --- Research interests → inline --- */
+    /* ========= Research interests — inline pills ========= */
     .research-interests {
         display: flex !important;
         flex-wrap: wrap !important;
-        gap: 4pt !important;
+        gap: 3pt 6pt !important;
     }
 
     .interest-item {
         background: none !important;
         border-left: none !important;
-        padding: 2pt 8pt !important;
-        border: 0.5px solid #aaa !important;
+        padding: 2pt 7pt !important;
+        border: 0.5px solid #888 !important;
         border-radius: 2pt !important;
-        font-size: 8.5pt !important;
+        font-size: 8pt !important;
     }
 
     .interest-item p {
         display: none;
     }
 
-    /* --- Tech badges → simple tags --- */
-    .tech-badge {
-        background: none !important;
+    /* ========= Publications — tight academic style ========= */
+    .publication-item {
+        page-break-inside: avoid;
+        margin-bottom: 5pt !important;
+        padding-bottom: 5pt !important;
+        padding-left: 10pt !important;
+        border-bottom: none !important;
+        border-left: 1.5pt solid #ccc !important;
+    }
+
+    .publication-title {
+        font-size: 9pt !important;
+        color: #000 !important;
+        font-weight: bold !important;
+    }
+
+    .authors {
+        font-size: 8pt !important;
+        color: #333 !important;
+        margin-top: 1pt !important;
+    }
+
+    .venue {
+        font-size: 8pt !important;
         color: #555 !important;
-        border: 0.5px solid #999 !important;
+        font-style: italic;
+    }
+
+    .publication-item .description {
         font-size: 7.5pt !important;
-        padding: 1pt 5pt !important;
-        border-radius: 2pt !important;
+        color: #444 !important;
+        margin-top: 1pt !important;
+        display: none !important;
+    }
+
+    /* ========= Projects — compact cards ========= */
+    .project-item {
+        page-break-inside: avoid;
+        margin-bottom: 5pt !important;
+        padding-bottom: 5pt !important;
+        padding-left: 10pt !important;
+        border-bottom: none !important;
+        border-left: 1.5pt solid #ddd !important;
+    }
+
+    .project-item h3 {
+        color: #000 !important;
+        font-size: 9.5pt !important;
+        margin-bottom: 0 !important;
+    }
+
+    .project-item .date {
+        color: #555 !important;
+        font-size: 7.5pt !important;
+        font-style: italic;
+        margin-bottom: 1pt !important;
+    }
+
+    .project-item .description {
+        color: #333 !important;
+        font-size: 8pt !important;
+        line-height: 1.3 !important;
+        margin-top: 1pt !important;
     }
 
     .project-tech {
-        margin-top: 3pt !important;
+        margin-top: 2pt !important;
     }
 
-    /* --- Skills → inline --- */
-    .skill-tag {
+    .tech-badge {
         background: none !important;
-        color: #000 !important;
-        padding: 0 !important;
-        font-size: 9pt !important;
+        color: #555 !important;
+        border: 0.5px solid #aaa !important;
+        font-size: 7pt !important;
+        padding: 0.5pt 4pt !important;
+        border-radius: 1.5pt !important;
     }
 
-    .skills {
-        gap: 4pt 16pt !important;
-    }
-
-    /* --- Progress bars → text percentage --- */
     .progress-bar {
         display: none !important;
     }
 
-    /* --- Status badges → simple text --- */
+    /* ========= Status badges ========= */
     .status-badge {
-        font-size: 7.5pt !important;
-        padding: 1pt 5pt !important;
-        border-radius: 2pt !important;
+        font-size: 7pt !important;
+        padding: 0.5pt 4pt !important;
+        border-radius: 1.5pt !important;
     }
 
     .status-badge.active {
         background: none !important;
-        color: #555 !important;
+        color: #444 !important;
         border: 0.5px solid #888 !important;
     }
 
     .status-badge.completed {
         background: none !important;
-        color: #555 !important;
+        color: #444 !important;
         border: 0.5px solid #888 !important;
     }
 
-    /* --- Page settings --- */
+    .status-badge.planning {
+        background: none !important;
+        color: #444 !important;
+        border: 0.5px solid #888 !important;
+    }
+
+    /* ========= Skills — clean inline ========= */
+    .skill-tag {
+        background: none !important;
+        color: #000 !important;
+        padding: 0 !important;
+        font-size: 8.5pt !important;
+    }
+
+    .skills {
+        gap: 3pt 14pt !important;
+    }
+
+    /* ========= Awards — use grid layout ========= */
+    .award-item h3 {
+        font-size: 9pt !important;
+    }
+
+    /* ========= Page settings ========= */
     @page {
-        margin: 0.6in 0.7in;
+        margin: 0.5in 0.6in;
         size: A4;
+    }
+
+    /* Avoid orphan sections at page bottom */
+    .section {
+        page-break-inside: auto;
+    }
+
+    h2 {
+        page-break-after: avoid !important;
     }
 }
 
