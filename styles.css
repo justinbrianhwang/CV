@@ -495,9 +495,9 @@ body.dark-mode .institution {
 
     .profile-image {
         width: 70pt !important;
-        height: 85pt !important;
-        border-radius: 50% / 60% !important;
-        border: 1pt solid #888 !important;
+        height: 90pt !important;
+        border-radius: 0 !important;
+        border: 0.5pt solid #888 !important;
         box-shadow: none !important;
         object-fit: cover;
     }
