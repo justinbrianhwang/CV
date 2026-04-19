@@ -833,3 +833,24 @@ body.dark-mode .institution {
         font-size: 1em;
     }
 }
+
+/* Publication type badge */
+.pub-type {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  margin-right: 8px;
+  vertical-align: middle;
+  text-transform: uppercase;
+}
+.pub-type--conf {
+  background: #e0e7ff;
+  color: #4c51bf;
+}
+.pub-type--journal {
+  background: #fbeae5;
+  color: #c53030;
+}
