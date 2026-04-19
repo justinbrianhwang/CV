@@ -882,3 +882,37 @@ body.dark-mode .institution {
   background: #fbeae5;
   color: #c53030;
 }
+
+/* Education item with school logo */
+.edu-with-logo {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+}
+
+.edu-with-logo .edu-logo {
+    width: 56px;
+    height: 56px;
+    object-fit: contain;
+    flex-shrink: 0;
+    border-radius: 8px;
+    background: #fff;
+    padding: 4px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.edu-with-logo .edu-text {
+    flex: 1;
+}
+
+@media print {
+    .edu-with-logo .edu-logo {
+        width: 34pt;
+        height: 34pt;
+        padding: 2pt;
+        border: 0.3pt solid #999 !important;
+    }
+    .edu-with-logo {
+        gap: 10pt;
+    }
+}
