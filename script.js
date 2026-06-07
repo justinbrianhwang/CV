@@ -62,4 +62,34 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.classList.add('dark-mode');
     }
     updateToggleIcon();
+
+    // Scrollspy: highlight the TOC link for the section currently in view
+    const tocLinks = document.querySelectorAll('.cv-toc__link');
+    const sectionMap = new Map();
+    tocLinks.forEach(link => {
+        const id = link.getAttribute('href').slice(1);
+        const target = document.getElementById(id);
+        if (target) sectionMap.set(target, link);
+    });
+
+    if (sectionMap.size && 'IntersectionObserver' in window) {
+        const visible = new Set();
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) visible.add(entry.target);
+                else visible.delete(entry.target);
+            });
+            // Pick the topmost visible section (smallest bounding-box top)
+            let chosen = null;
+            visible.forEach(el => {
+                if (!chosen || el.getBoundingClientRect().top < chosen.getBoundingClientRect().top) {
+                    chosen = el;
+                }
+            });
+            tocLinks.forEach(l => l.classList.remove('is-active'));
+            if (chosen && sectionMap.has(chosen)) sectionMap.get(chosen).classList.add('is-active');
+        }, { rootMargin: '-20% 0px -60% 0px', threshold: 0 });
+
+        sectionMap.forEach((_, el) => observer.observe(el));
+    }
 });
