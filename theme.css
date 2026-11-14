@@ -160,7 +160,22 @@ h3 { font-family: var(--sans); font-size: 1.08em; font-weight: 700; color: var(-
 .status-badge, .status-badge.active, .status-badge.completed, .pub-type--conf { background: var(--navy); color: var(--on-navy); }
 .status-badge.planning, .pub-type--journal { background: var(--amber); color: #fff; }
 .progress-bar { height: 4px; background: var(--hair); border-radius: 0; }
-.interest-item { background: none; border-radius: 0; border-left: 3px solid var(--amber); padding: 4px 0 4px 14px; }
+/* Research interests: one area per row, in order, name on the left and keywords on the right */
+.research-interests { grid-template-columns: 1fr; gap: 0; border-top: 1px solid var(--hair); }
+.interest-item {
+  display: grid;
+  grid-template-columns: 15rem minmax(0, 1fr);
+  gap: 4px 20px;
+  align-items: baseline;
+  background: none;
+  border-radius: 0;
+  border-left: 3px solid var(--amber);
+  border-bottom: 1px solid var(--hair);
+  padding: 10px 0 10px 14px;
+}
+.interest-item strong { margin: 0; }
+.interest-item p { margin: 0; color: var(--ink-2); font-size: 0.92em; line-height: 1.55; }
+@media (max-width: 640px) { .interest-item { grid-template-columns: 1fr; } }
 body.dark-mode .interest-item { background: none; border-left-color: var(--amber); }
 .progress-fill { background: var(--amber); border-radius: 0; }
 
